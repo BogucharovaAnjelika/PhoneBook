@@ -42,7 +42,7 @@ public class UsersPhone {
     }
 
     private static void printPhones(List<String> phones) {
-        if (!phones.isEmpty()) {
+        if (phones != null) {
             int i = 1;
             for (String phone : phones) {
                 System.out.println(i++ + ". " + phone);
