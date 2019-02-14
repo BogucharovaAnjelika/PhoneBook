@@ -2,7 +2,9 @@ package com.bogucharova;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class UsersPhone {
     public static void main(String[] args) {
@@ -31,18 +33,22 @@ public class UsersPhone {
             user = read.readLine().toUpperCase();
 
             List<String> phones = userPhone.get(user);
-            if (!phones.isEmpty()) {
-                int i = 1;
-                for (String phone : phones) {
-                    System.out.println(i++ + ". " + phone);
-                }
-            } else {
-                System.out.println("ФИО нет в БД");
-            }
+            printPhones(phones);
 
         } catch (Exception ex) {
             System.out.println(ex);
         }
 
+    }
+
+    private static void printPhones(List<String> phones) {
+        if (!phones.isEmpty()) {
+            int i = 1;
+            for (String phone : phones) {
+                System.out.println(i++ + ". " + phone);
+            }
+        } else {
+            System.out.println("ФИО нет в БД");
+        }
     }
 }
